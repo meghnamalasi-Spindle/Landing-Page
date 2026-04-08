@@ -1,0 +1,27 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --color-spindle-primary: #6366f1;
+  --color-spindle-primary-dark: #4338ca;
+  --color-spindle-accent: #06b6d4;
+  --color-spindle-surface: #fafafa;
+  --color-spindle-border: #e4e4e7;
+  --color-spindle-text: #18181b;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
