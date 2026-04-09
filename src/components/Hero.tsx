@@ -1,49 +1,66 @@
 export function Hero() {
   return (
     <section
-      className="relative overflow-hidden border-b border-zinc-200/80 bg-[#FAFAFA] pb-16 pt-12 sm:pb-20 sm:pt-16 lg:pb-24 lg:pt-20"
+      className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden pb-20 pt-28 sm:pb-24 sm:pt-32 lg:min-h-[min(100svh,900px)] lg:pb-28 lg:pt-36"
       aria-labelledby="hero-heading"
     >
-      <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(99,102,241,0.18),transparent)]"
-        aria-hidden
-      />
-      <div className="pointer-events-none absolute -right-24 top-24 h-72 w-72 rounded-full bg-cyan-400/10 blur-3xl" aria-hidden />
-      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <p className="mb-4 inline-flex items-center rounded-full border border-indigo-200/80 bg-indigo-50/80 px-3 py-1 text-[12px] font-semibold uppercase tracking-wider text-indigo-800">
-          Operations workflow intelligence
+      <div className="pointer-events-none absolute inset-0" aria-hidden>
+        <img
+          src="https://images.unsplash.com/photo-1504917595217-d002dc672b32?auto=format&fit=crop&w=2000&q=80"
+          alt=""
+          className="h-full w-full object-cover opacity-40"
+        />
+        <div className="absolute inset-0 bg-[#0a0a0b]/85" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_90%_70%_at_50%_-10%,rgba(99,102,241,0.2),transparent_55%)]" />
+        <div className="absolute -right-32 top-1/4 h-[500px] w-[500px] rounded-full bg-indigo-600/15 blur-[120px]" />
+        <div className="absolute -left-40 bottom-0 h-80 w-80 rounded-full bg-[#c9a227]/10 blur-[100px]" />
+        <div className="absolute inset-0 grain opacity-100" />
+      </div>
+
+      <div className="relative mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+        <p className="animate-fade-up text-[11px] font-semibold uppercase tracking-[0.4em] text-zinc-400">
+          AI-native frontline execution · Industry 4.0
         </p>
         <h1
           id="hero-heading"
-          className="max-w-3xl text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl lg:text-[3.25rem] lg:leading-[1.1]"
+          className="font-display animate-fade-up animation-delay-100 mt-6 max-w-[18ch] text-[2.65rem] font-semibold leading-[0.98] tracking-tight text-white sm:max-w-4xl sm:text-6xl md:text-7xl lg:text-[4.5rem]"
         >
-          Operational approvals that actually finish.
+          <span className="block">Turn frontline chaos into</span>
+          <span className="mt-1 block bg-gradient-to-r from-white via-zinc-100 to-zinc-500 bg-clip-text text-transparent sm:mt-2">
+            structured execution.
+          </span>
         </h1>
-        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-zinc-600 sm:text-xl">
-          Spindle turns scattered work packages—procurement, safety waivers,
-          certifications—into one layer of routing, evidence, and
-          accountability. Fewer escalations. Faster safe operations.
+        <p className="animate-fade-up animation-delay-200 mt-8 max-w-2xl text-[15px] leading-relaxed text-zinc-400 sm:text-lg">
+          Spindle is an{' '}
+          <strong className="font-semibold text-zinc-200">
+            AI-native frontline execution platform
+          </strong>
+          : the first agentic CMMS that integrates voice, vision, IoT, and
+          organizational context—so maintenance moves from reacting to{' '}
+          <strong className="font-semibold text-zinc-200">executing</strong>{' '}
+          with traceable, intelligent workflows.
         </p>
-        <div className="mt-8 flex flex-wrap items-center gap-4">
+        <div className="animate-fade-up animation-delay-300 mt-10 flex flex-wrap items-center gap-4">
           <a
             id="cta"
             href="#cta-form"
-            className="inline-flex items-center justify-center rounded-xl bg-indigo-600 px-5 py-3 text-[15px] font-semibold text-white shadow-md shadow-indigo-600/20 transition-colors hover:bg-indigo-700"
+            className="inline-flex items-center justify-center rounded-full bg-white px-7 py-3.5 text-[12px] font-semibold uppercase tracking-[0.15em] text-[#0a0a0b] transition-colors hover:bg-zinc-200"
           >
-            Request early access
+            request early access
           </a>
           <a
             href="https://spindle-org.github.io/spindle-prototype/"
-            className="inline-flex items-center justify-center rounded-xl border border-zinc-200 bg-white px-5 py-3 text-[15px] font-semibold text-zinc-800 shadow-sm transition-colors hover:border-indigo-200 hover:bg-zinc-50"
+            className="inline-flex items-center justify-center rounded-full border border-white/20 px-7 py-3.5 text-[12px] font-semibold uppercase tracking-[0.15em] text-white transition-colors hover:border-white/40 hover:bg-white/[0.04]"
             target="_blank"
             rel="noreferrer"
           >
-            Explore the design system
+            open live prototype
           </a>
         </div>
-        <p className="mt-6 text-[13px] text-zinc-500">
-          Built for desk workers and field teams who live under SLAs, audits,
-          and real-world consequences.
+        <p className="mt-10 max-w-2xl text-[13px] leading-relaxed text-zinc-600">
+          For asset-heavy, multi-site operations: manufacturing, logistics,
+          facilities, infrastructure, energy—and teams stuck between legacy CMMS
+          and informal channels.
         </p>
       </div>
     </section>

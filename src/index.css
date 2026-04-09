@@ -1,13 +1,12 @@
 @import 'tailwindcss';
 
 @theme {
-  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
-  --color-spindle-primary: #6366f1;
-  --color-spindle-primary-dark: #4338ca;
-  --color-spindle-accent: #06b6d4;
-  --color-spindle-surface: #fafafa;
-  --color-spindle-border: #e4e4e7;
-  --color-spindle-text: #18181b;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-display: 'Syne', system-ui, sans-serif;
+  --color-cred-ink: #0a0a0b;
+  --color-cred-muted: #a1a1aa;
+  --color-cred-line: rgba(255, 255, 255, 0.08);
+  --color-cred-gold: #c9a227;
 }
 
 html {
@@ -18,10 +17,53 @@ html {
   html {
     scroll-behavior: auto;
   }
+
+  .animate-fade-up {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.font-display {
+  font-family: var(--font-display), system-ui, sans-serif;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Only delays the animation start—do not set opacity here, or content stays
+   invisible if the animation utility does not apply (e.g. build / variant mismatch). */
+.animation-delay-100 {
+  animation-delay: 0.1s;
+}
+
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animation-delay-300 {
+  animation-delay: 0.3s;
+}
+
+.grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");
 }

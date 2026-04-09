@@ -1,19 +1,23 @@
 const faqs = [
   {
-    q: 'Is Spindle a generic task tracker?',
-    a: 'No. It is oriented around operational work packages—approvals, evidence, SLAs, and escalation—so teams are not forced to translate their world into generic tickets.',
+    q: 'What is an “agentic CMMS”?',
+    a: 'A maintenance system where autonomous agents plan, route, and collaborate across assets, crews, and work orders—moving orgs from tracking work in forms to executing work with context. Spindle is built agent-first for Industry 4.0.',
   },
   {
-    q: 'Who is it for?',
-    a: 'Organizations that run physical operations: plants, campuses, infrastructure, and regulated environments where sign-offs and proof matter.',
+    q: 'How is Spindle different from MaintainX, UpKeep, or Fiix?',
+    a: 'Those tools excel at records and mobility; Spindle is designed as a system of execution—multimodal capture (vision, voice, IoT), agentic workflows, mission-control intelligence, and governed automation. Compare against both modern CMMS and enterprise EAM (e.g. Maximo, SAP PM) depending on your stack.',
   },
   {
-    q: 'How does this relate to the public prototype?',
-    a: 'The GitHub-hosted prototype is a design system and sample surfaces so teams can preview interaction patterns. The product roadmap will extend beyond that shell based on pilot feedback.',
+    q: 'Who is the ideal customer?',
+    a: 'Mid-market to enterprise, 200–20,000+ employees, multi-location, asset-heavy, with field and on-site workforces—manufacturing, logistics, facilities, infrastructure, energy, and industrial services. Strong fit when IoT investments are in flight or informal tools (WhatsApp, spreadsheets) still run the floor.',
   },
   {
-    q: 'Are you handling production workloads today?',
-    a: 'We are speaking with design partners. Request access to join the conversation and shape priorities.',
+    q: 'How does IoT and ERP data fit in?',
+    a: 'Spindle is designed to integrate across organizational structure, asset systems, and IoT—feeding real-time awareness (not just historical dashboards) and closing the loop to corrective action. Specific connectors depend on your environment and rollout phase.',
+  },
+  {
+    q: 'Is AI usage auditable for regulated environments?',
+    a: 'Governance is a core design constraint: traceable actions, logged agent decisions, and controlled sensitive data—so teams in regulated industries can adopt AI without sacrificing audit posture.',
   },
 ]
 
@@ -21,28 +25,37 @@ export function FAQ() {
   return (
     <section
       id="faq"
-      className="border-b border-zinc-200/80 bg-white py-16 sm:py-20"
+      className="scroll-mt-24 border-b border-white/[0.08] bg-[#0a0a0b] py-20 sm:py-28"
       aria-labelledby="faq-heading"
     >
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <h2
           id="faq-heading"
-          className="text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl"
+          className="font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl"
         >
-          FAQ
+          FAQs
         </h2>
-        <dl className="mt-10 max-w-3xl space-y-8">
+        <p className="mt-3 text-[15px] text-zinc-500">
+          Spindle in practice—agentic CMMS, frontline AI, and enterprise fit.
+        </p>
+        <div className="mt-10 divide-y divide-white/[0.08] border-t border-white/[0.08]">
           {faqs.map((item) => (
-            <div key={item.q}>
-              <dt className="text-[15px] font-semibold text-zinc-900">
-                {item.q}
-              </dt>
-              <dd className="mt-2 text-[14px] leading-relaxed text-zinc-600">
+            <details
+              key={item.q}
+              className="group py-5 [&_summary::-webkit-details-marker]:hidden"
+            >
+              <summary className="flex cursor-pointer list-none items-start justify-between gap-4 text-left text-[15px] font-semibold text-white">
+                <span>{item.q}</span>
+                <span className="mt-0.5 shrink-0 text-zinc-500 transition-transform group-open:rotate-45">
+                  +
+                </span>
+              </summary>
+              <p className="mt-3 text-[14px] leading-relaxed text-zinc-500">
                 {item.a}
-              </dd>
-            </div>
+              </p>
+            </details>
           ))}
-        </dl>
+        </div>
       </div>
     </section>
   )

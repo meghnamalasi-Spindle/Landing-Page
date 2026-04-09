@@ -1,62 +1,61 @@
 const pillars = [
   {
-    title: 'Inbox & judgment',
-    body: 'Surface what needs a human decision now—work packages with context, not another unread email thread.',
-    tone: 'indigo' as const,
+    eyebrow: 'Agentic CMMS · system of execution',
+    title: 'Move from tracking work to executing work.',
+    body: 'Autonomous agents plan and collaborate to build personalized maintenance frameworks. Three pillars: agentic asset management, agentic crew management, and agentic work order management.',
   },
   {
-    title: 'Routing & proof',
-    body: 'Send the right packet to the right owner. Capture signatures, photos, and attachments where compliance demands it.',
-    tone: 'cyan' as const,
+    eyebrow: 'Frontline copilot',
+    title: 'AI built for technicians—not spreadsheets.',
+    body: 'Visual + geotagged asset identification in the field. Voice-first commands across the full task lifecycle (create, update, close). Minimum-effort reporting and alerting—formless forms. Minimal training, zero dependency on clunky interfaces.',
   },
   {
-    title: 'Risk & bottlenecks',
-    body: 'See what is blocked, escalated, or drifting from SLA before it becomes an incident or audit finding.',
-    tone: 'amber' as const,
+    eyebrow: 'Mission-control platform',
+    title: 'Operational intelligence, not vanity dashboards.',
+    body: 'A central command layer for leadership: decision-making workspaces, cost tracking and trends, operational simulations and planning—beyond charts that only show what already happened.',
   },
   {
-    title: 'Learning loops',
-    body: 'Spot recurring delays—vendor patterns, noisy approval paths—and tune the operational system over time.',
-    tone: 'violet' as const,
+    eyebrow: 'Agentic predictive maintenance',
+    title: 'Predict failures before they become outages.',
+    body: 'Recommend and trigger corrective actions automatically. Continuously improves using real-time data and historical patterns—closing the loop from signal to execution.',
   },
 ]
-
-const toneMap = {
-  indigo: 'border-indigo-100 bg-indigo-50/60 ring-indigo-100',
-  cyan: 'border-cyan-100 bg-cyan-50/50 ring-cyan-100',
-  amber: 'border-amber-100 bg-amber-50/70 ring-amber-100',
-  violet: 'border-violet-100 bg-violet-50/60 ring-violet-100',
-}
 
 export function Pillars() {
   return (
     <section
       id="product"
-      className="border-b border-zinc-200/80 bg-white py-16 sm:py-20"
+      className="scroll-mt-24 border-b border-white/[0.08] bg-[#0a0a0b] py-20 sm:py-28"
       aria-labelledby="pillars-heading"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <p className="font-display text-[11px] font-semibold uppercase tracking-[0.35em] text-zinc-500">
+          platform pillars
+        </p>
         <h2
           id="pillars-heading"
-          className="text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl"
+          className="font-display mt-4 max-w-4xl text-3xl font-semibold leading-[1.1] tracking-tight text-white sm:text-4xl md:text-5xl"
         >
-          One layer for serious operations
+          The first agentic CMMS for Industry 4.0.
         </h2>
-        <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-zinc-600 sm:text-base">
-          Spindle is not generic task software. It mirrors how industrial and
-          campus teams actually work: packets, sign-offs, evidence, and
-          escalation paths—made legible in one place.
+        <p className="mt-6 max-w-2xl text-[15px] leading-relaxed text-zinc-500">
+          Integrate across organizational structure, asset systems, and IoT—so
+          frontline execution stays structured as work crosses channels,
+          teams, and contractors.
         </p>
-        <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:gap-6">
+        <ul className="mt-14 grid gap-6 lg:grid-cols-2">
           {pillars.map((p) => (
             <li
               key={p.title}
-              className={`rounded-2xl border p-5 shadow-[0_1px_2px_rgba(24,24,27,0.04)] ring-1 ${toneMap[p.tone]}`}
+              className="flex flex-col rounded-2xl border border-white/[0.08] bg-white/[0.02] p-6 sm:p-8"
             >
-              <h3 className="text-[16px] font-semibold text-zinc-900">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#c9a227]/90">
+                {p.eyebrow}
+              </p>
+              <h3 className="font-display mt-4 text-xl font-semibold leading-snug text-white sm:text-2xl">
                 {p.title}
               </h3>
-              <p className="mt-2 text-[14px] leading-relaxed text-zinc-600">
+              <p className="mt-3 flex-1 text-[14px] leading-relaxed text-zinc-500">
                 {p.body}
               </p>
             </li>

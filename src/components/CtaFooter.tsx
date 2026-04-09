@@ -1,22 +1,51 @@
+const footerCols: {
+  title: string
+  links: { label: string; href: string; external?: boolean }[]
+}[] = [
+  {
+    title: 'Product',
+    links: [
+      { label: 'Overview', href: '#product' },
+      { label: 'How it works', href: '#how-it-works' },
+      {
+        label: 'Prototype',
+        href: 'https://spindle-org.github.io/spindle-prototype/',
+        external: true,
+      },
+    ],
+  },
+  {
+    title: 'Company',
+    links: [
+      { label: 'Team', href: '#team' },
+      { label: 'FAQ', href: '#faq' },
+      { label: 'Request access', href: '#cta' },
+    ],
+  },
+]
+
 export function CtaFooter() {
   return (
-    <footer className="bg-zinc-900 text-zinc-300">
+    <footer className="bg-black text-zinc-400">
       <div
         id="cta-form"
-        className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8"
+        className="scroll-mt-24 mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-24 lg:px-8"
       >
-        <div className="rounded-2xl border border-zinc-700/80 bg-zinc-800/50 p-6 sm:p-8 lg:flex lg:items-center lg:justify-between lg:gap-8">
-          <div className="max-w-xl">
-            <h2 className="text-xl font-bold tracking-tight text-white sm:text-2xl">
-              Get early access
-            </h2>
-            <p className="mt-2 text-[14px] leading-relaxed text-zinc-400">
-              Leave your email—we will follow up with next steps for pilots and
-              design partners. (Demo form; wire to your backend when ready.)
-            </p>
-          </div>
+        <div className="text-center">
+          <p className="font-display text-[11px] font-semibold uppercase tracking-[0.4em] text-zinc-600">
+            download the future
+          </p>
+          <h2 className="font-display mt-6 text-4xl font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl">
+            request
+            <br />
+            <span className="text-zinc-600">early access.</span>
+          </h2>
+          <p className="mx-auto mt-6 max-w-md text-[15px] leading-relaxed text-zinc-500">
+            Leave your email for early access, pilots, and design partners.
+            Connect this form to your marketing automation or API when ready.
+          </p>
           <form
-            className="mt-6 flex w-full max-w-md flex-col gap-3 sm:flex-row lg:mt-0 lg:shrink-0"
+            className="mx-auto mt-10 flex max-w-md flex-col gap-3 sm:flex-row sm:justify-center"
             onSubmit={(e) => e.preventDefault()}
           >
             <label htmlFor="email" className="sr-only">
@@ -29,38 +58,62 @@ export function CtaFooter() {
               required
               placeholder="you@company.com"
               autoComplete="email"
-              className="min-h-11 flex-1 rounded-lg border border-zinc-600 bg-zinc-900/80 px-3 py-2 text-[14px] text-white placeholder:text-zinc-500 focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/40"
+              className="min-h-12 flex-1 rounded-full border border-white/10 bg-white/[0.04] px-5 text-[14px] text-white placeholder:text-zinc-600 focus:border-white/25 focus:outline-none focus:ring-2 focus:ring-white/10 sm:max-w-xs"
             />
             <button
               type="submit"
-              className="min-h-11 rounded-lg bg-indigo-500 px-4 text-[14px] font-semibold text-white transition-colors hover:bg-indigo-400"
+              className="min-h-12 rounded-full bg-white px-8 text-[12px] font-semibold uppercase tracking-[0.15em] text-black transition-colors hover:bg-zinc-200"
             >
-              Notify me
+              notify me
             </button>
           </form>
         </div>
 
-        <div className="mt-12 flex flex-col items-start justify-between gap-6 border-t border-zinc-800 pt-8 sm:flex-row sm:items-center">
-          <div className="flex items-center gap-2 text-[14px] text-zinc-400">
-            <span
-              className="flex h-7 w-7 items-center justify-center rounded-md bg-indigo-500 text-[11px] font-bold text-white"
-              aria-hidden
-            >
-              S
-            </span>
-            © {new Date().getFullYear()} Spindle. All rights reserved.
+        <div className="mt-24 grid gap-10 border-t border-white/[0.08] pt-16 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="lg:col-span-2">
+            <div className="font-display flex items-center gap-2 text-lg font-bold text-white">
+              <span
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/[0.04] text-[13px]"
+                aria-hidden
+              >
+                S
+              </span>
+              spindle
+            </div>
+            <p className="mt-4 max-w-sm text-[13px] leading-relaxed text-zinc-600">
+              Agentic execution for maintenance and frontline operations—governed
+              AI, multimodal capture, and traceable decisions.
+            </p>
           </div>
-          <div className="flex flex-wrap gap-6 text-[13px]">
-            <a
-              href="https://spindle-org.github.io/spindle-prototype/"
-              className="text-zinc-400 hover:text-white"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Design prototype
-            </a>
-            <span className="text-zinc-600">Privacy</span>
-            <span className="text-zinc-600">Terms</span>
+          {footerCols.map((col) => (
+            <div key={col.title}>
+              <p className="font-display text-[11px] font-semibold uppercase tracking-[0.25em] text-zinc-600">
+                {col.title}
+              </p>
+              <ul className="mt-4 space-y-2">
+                {col.links.map((link) => (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      className="text-[14px] text-zinc-500 transition-colors hover:text-white"
+                      {...(link.external
+                        ? { target: '_blank' as const, rel: 'noreferrer' }
+                        : {})}
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-white/[0.06] pt-8 text-[12px] text-zinc-600 sm:flex-row sm:items-center">
+          <p>© {new Date().getFullYear()} Spindle. All rights reserved.</p>
+          <div className="flex flex-wrap gap-6">
+            <span className="cursor-default">Privacy</span>
+            <span className="cursor-default">Terms</span>
           </div>
         </div>
       </div>
