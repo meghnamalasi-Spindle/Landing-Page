@@ -1,66 +1,46 @@
-const blocks = [
+const metrics = [
   {
-    title: 'For operations leaders',
-    lines: [
-      'Reduce downtime and surprise failures',
-      'Real-time visibility across assets, teams, and locations',
-      'Scale operations without linear headcount growth',
-    ],
+    value: 'Downtime',
+    label: 'Reduced through predictive actions and faster corrective execution.',
   },
   {
-    title: 'For maintenance & plant managers',
-    lines: [
-      'Replace coordination chaos across teams and shifts',
-      'Standardize workflows across sites',
-      'Turn incomplete data into action—with voice & visual understanding',
-    ],
+    value: 'Visibility',
+    label: 'Real-time awareness across assets, crews, and multi-site operations.',
   },
   {
-    title: 'For the business',
-    lines: [
-      'Lower maintenance cost; higher uptime and asset life',
-      'Workforce efficiency and accountability',
-      'Data-driven decisions, compliance-ready governance',
-    ],
+    value: 'Efficiency',
+    label: 'Higher workforce output with lower form burden and cleaner handoffs.',
   },
 ]
 
 export function TrustStrip() {
   return (
     <section
-      className="border-b border-white/[0.08] bg-[#080809] py-20 sm:py-28"
+      className="border-b border-[#dadada] bg-[#f9fafb] py-16 sm:py-20"
       aria-labelledby="outcomes-heading"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <p className="font-display text-center text-[11px] font-semibold uppercase tracking-[0.35em] text-zinc-500">
+        <p className="font-display text-center text-[11px] font-semibold uppercase tracking-[0.35em] text-[#bbbbdd]">
           outcomes by stakeholder
         </p>
         <h2
           id="outcomes-heading"
-          className="font-display mx-auto mt-4 max-w-2xl text-center text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl"
+          className="font-display mx-auto mt-4 max-w-2xl text-center text-3xl font-semibold leading-tight tracking-tight text-[#0f0f0f] sm:text-4xl"
         >
           Built for ROI—not slideware.
         </h2>
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {blocks.map((b) => (
+        <div className="mt-10 grid gap-4 md:grid-cols-3">
+          {metrics.map((metric) => (
             <div
-              key={b.title}
-              className="rounded-2xl border border-white/[0.08] bg-[#0a0a0b] p-6 sm:p-7"
+              key={metric.value}
+              className="rounded-xl border border-[#dadada] bg-[#f2ede5] p-5 sm:p-6"
             >
-              <h3 className="font-display text-[13px] font-semibold uppercase tracking-[0.12em] text-[#c9a227]">
-                {b.title}
-              </h3>
-              <ul className="mt-4 space-y-2">
-                {b.lines.map((line) => (
-                  <li
-                    key={line}
-                    className="flex gap-2 text-[14px] leading-relaxed text-zinc-500"
-                  >
-                    <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-zinc-600" />
-                    {line}
-                  </li>
-                ))}
-              </ul>
+              <p className="font-display text-2xl font-semibold text-[#1a475c] sm:text-3xl">
+                {metric.value}
+              </p>
+              <p className="mt-2 text-[13px] leading-relaxed text-[#2f4366]/80">
+                {metric.label}
+              </p>
             </div>
           ))}
         </div>

@@ -25,32 +25,32 @@ export function FAQ() {
   return (
     <section
       id="faq"
-      className="scroll-mt-24 border-b border-white/[0.08] bg-[#0a0a0b] py-20 sm:py-28"
+      className="scroll-mt-24 border-b border-[#dadada] bg-[#f2ede5] py-20 sm:py-28"
       aria-labelledby="faq-heading"
     >
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <h2
           id="faq-heading"
-          className="font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl"
+          className="font-display text-3xl font-semibold tracking-tight text-[#0f0f0f] sm:text-4xl"
         >
           FAQs
         </h2>
-        <p className="mt-3 text-[15px] text-zinc-500">
+        <p className="mt-3 text-[15px] text-[#2f4366]/80">
           Spindle in practice—agentic CMMS, frontline AI, and enterprise fit.
         </p>
-        <div className="mt-10 divide-y divide-white/[0.08] border-t border-white/[0.08]">
+        <div className="mt-10 divide-y divide-[#dadada] border-t border-[#dadada]">
           {faqs.map((item) => (
             <details
               key={item.q}
               className="group py-5 [&_summary::-webkit-details-marker]:hidden"
             >
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-4 text-left text-[15px] font-semibold text-white">
+              <summary className="flex cursor-pointer list-none items-start justify-between gap-4 text-left text-[15px] font-semibold text-[#0f0f0f]">
                 <span>{item.q}</span>
-                <span className="mt-0.5 shrink-0 text-zinc-500 transition-transform group-open:rotate-45">
+                <span className="mt-0.5 shrink-0 text-[#2f4366]/70 transition-transform group-open:rotate-45">
                   +
                 </span>
               </summary>
-              <p className="mt-3 text-[14px] leading-relaxed text-zinc-500">
+              <p className="mt-3 text-[14px] leading-relaxed text-[#2f4366]/80">
                 {item.a}
               </p>
             </details>

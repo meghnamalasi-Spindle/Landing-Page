@@ -21,20 +21,20 @@ export function Team() {
   return (
     <section
       id="team"
-      className="scroll-mt-24 border-b border-white/[0.08] bg-[#080809] py-20 sm:py-28"
+      className="scroll-mt-24 border-b border-[#dadada] bg-[#f9fafb] py-20 sm:py-28"
       aria-labelledby="team-heading"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <p className="font-display text-[11px] font-semibold uppercase tracking-[0.35em] text-zinc-500">
+        <p className="font-display text-[11px] font-semibold uppercase tracking-[0.35em] text-[#2f4366]/70">
           founders
         </p>
         <h2
           id="team-heading"
-          className="font-display mt-4 max-w-xl text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl"
+          className="font-display mt-4 max-w-xl text-3xl font-semibold leading-tight tracking-tight text-[#0f0f0f] sm:text-4xl md:text-5xl"
         >
           Frontline pain × agentic AI.
         </h2>
-        <p className="mt-5 max-w-2xl text-[15px] leading-relaxed text-zinc-500">
+        <p className="mt-5 max-w-2xl text-[15px] leading-relaxed text-[#2f4366]/80">
           A blend of firsthand operational reality and deep expertise in
           agentic AI, operational systems, and high-scale frontline
           environments—so Spindle solves problems competitors have not lived
@@ -43,8 +43,8 @@ export function Team() {
         <ul className="mt-14 grid gap-8 md:grid-cols-2">
           {founders.map((person) => (
             <li key={person.seed}>
-              <div className="overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0a0a0b] transition-colors hover:border-white/[0.14]">
-                <div className="aspect-[5/3] bg-gradient-to-br from-indigo-950/80 to-zinc-950 p-8 sm:p-10">
+              <div className="overflow-hidden rounded-2xl border border-[#dadada] bg-[#f2ede5] transition-colors hover:border-[#bbbbdd]">
+                <div className="aspect-[5/3] bg-gradient-to-br from-[#2f4366]/80 to-[#1a475c]/70 p-8 sm:p-10">
                   <img
                     src={avatarUrl(person.seed)}
                     alt=""
@@ -54,14 +54,14 @@ export function Team() {
                     loading="lazy"
                   />
                 </div>
-                <div className="border-t border-white/[0.06] p-6 sm:p-8">
-                  <p className="font-display text-2xl font-semibold text-white">
+                <div className="border-t border-[#dadada] p-6 sm:p-8">
+                  <p className="font-display text-2xl font-semibold text-[#0f0f0f]">
                     {person.name}
                   </p>
-                  <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.15em] text-[#c9a227]">
+                  <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.15em] text-[#a8d4d4]">
                     {person.role}
                   </p>
-                  <p className="mt-4 text-[14px] leading-relaxed text-zinc-500">
+                  <p className="mt-4 text-[14px] leading-relaxed text-[#2f4366]/80">
                     {person.bio}
                   </p>
                 </div>

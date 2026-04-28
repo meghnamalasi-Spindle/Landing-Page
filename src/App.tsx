@@ -11,16 +11,18 @@ import { OfferingSection } from './components/OfferingSection'
 import { PainOutcomes } from './components/PainOutcomes'
 import { Pillars } from './components/Pillars'
 import { ProductPreview } from './components/ProductPreview'
+import { SocialProof } from './components/SocialProof'
 import { Statement } from './components/Statement'
 import { Team } from './components/Team'
 import { TrustStrip } from './components/TrustStrip'
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#0a0a0b] text-zinc-100 antialiased">
+    <div className="min-h-screen bg-[#f2ede5] text-[#0f0f0f] antialiased">
       <Header />
       <main>
         <Hero />
+        <SocialProof />
         <Statement />
         <OfferingSection />
         <Pillars />

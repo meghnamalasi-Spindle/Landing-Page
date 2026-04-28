@@ -25,37 +25,37 @@ export function Pillars() {
   return (
     <section
       id="product"
-      className="scroll-mt-24 border-b border-white/[0.08] bg-[#0a0a0b] py-20 sm:py-28"
+      className="scroll-mt-24 border-b border-[#dadada] bg-[#f2ede5] py-16 sm:py-20"
       aria-labelledby="pillars-heading"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <p className="font-display text-[11px] font-semibold uppercase tracking-[0.35em] text-zinc-500">
+        <p className="font-display text-[11px] font-semibold uppercase tracking-[0.35em] text-[#2f4366]/70">
           platform pillars
         </p>
         <h2
           id="pillars-heading"
-          className="font-display mt-4 max-w-4xl text-3xl font-semibold leading-[1.1] tracking-tight text-white sm:text-4xl md:text-5xl"
+          className="font-display mt-4 max-w-4xl text-3xl font-semibold leading-[1.1] tracking-tight text-[#0f0f0f] sm:text-4xl"
         >
           The first agentic CMMS for Industry 4.0.
         </h2>
-        <p className="mt-6 max-w-2xl text-[15px] leading-relaxed text-zinc-500">
+        <p className="mt-6 max-w-2xl text-[15px] leading-relaxed text-[#2f4366]">
           Integrate across organizational structure, asset systems, and IoT—so
           frontline execution stays structured as work crosses channels,
           teams, and contractors.
         </p>
-        <ul className="mt-14 grid gap-6 lg:grid-cols-2">
+        <ul className="mt-10 grid gap-4 lg:grid-cols-2">
           {pillars.map((p) => (
             <li
               key={p.title}
-              className="flex flex-col rounded-2xl border border-white/[0.08] bg-white/[0.02] p-6 sm:p-8"
+              className="flex flex-col rounded-xl border border-[#dadada] bg-[#f9fafb] p-5 sm:p-6"
             >
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#c9a227]/90">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#bbbbdd]">
                 {p.eyebrow}
               </p>
-              <h3 className="font-display mt-4 text-xl font-semibold leading-snug text-white sm:text-2xl">
+              <h3 className="font-display mt-3 text-lg font-semibold leading-snug text-[#0f0f0f] sm:text-xl">
                 {p.title}
               </h3>
-              <p className="mt-3 flex-1 text-[14px] leading-relaxed text-zinc-500">
+              <p className="mt-2 flex-1 text-[13px] leading-relaxed text-[#2f4366]/80">
                 {p.body}
               </p>
             </li>

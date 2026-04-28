@@ -21,16 +21,16 @@ export function ExecutionLoop() {
   return (
     <section
       id="how-it-works"
-      className="scroll-mt-24 border-b border-white/[0.08] bg-[#080809] py-20 sm:py-28"
+      className="scroll-mt-24 border-b border-[#dadada] bg-[#f9fafb] py-20 sm:py-28"
       aria-labelledby="loop-heading"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <p className="font-display text-[11px] font-semibold uppercase tracking-[0.35em] text-zinc-500">
+        <p className="font-display text-[11px] font-semibold uppercase tracking-[0.35em] text-[#2f4366]/70">
           system of execution
         </p>
         <h2
           id="loop-heading"
-          className="font-display mt-4 max-w-2xl text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl"
+          className="font-display mt-4 max-w-2xl text-3xl font-semibold leading-tight tracking-tight text-[#0f0f0f] sm:text-4xl md:text-5xl"
         >
           Machine + human signals → decisions → execution.
         </h2>
@@ -38,15 +38,15 @@ export function ExecutionLoop() {
           {steps.map((s, i) => (
             <li
               key={s.label}
-              className="relative rounded-xl border border-white/[0.08] bg-[#0a0a0b] p-6"
+              className="relative rounded-xl border border-[#dadada] bg-[#f2ede5] p-6"
             >
               <span className="font-display text-[11px] font-bold text-zinc-600">
                 {String(i + 1).padStart(2, '0')}
               </span>
-              <h3 className="font-display mt-3 text-lg font-semibold text-white">
+              <h3 className="font-display mt-3 text-lg font-semibold text-[#0f0f0f]">
                 {s.label}
               </h3>
-              <p className="mt-2 text-[13px] leading-relaxed text-zinc-500">
+              <p className="mt-2 text-[13px] leading-relaxed text-[#2f4366]/80">
                 {s.detail}
               </p>
             </li>

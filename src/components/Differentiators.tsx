@@ -28,16 +28,16 @@ const items = [
 export function Differentiators() {
   return (
     <section
-      className="border-b border-white/[0.08] bg-[#0a0a0b] py-20 sm:py-28"
+      className="border-b border-[#dadada] bg-[#f2ede5] py-20 sm:py-28"
       aria-labelledby="diff-heading"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <p className="font-display text-[11px] font-semibold uppercase tracking-[0.35em] text-zinc-500">
+        <p className="font-display text-[11px] font-semibold uppercase tracking-[0.35em] text-[#2f4366]/70">
           unique characteristics
         </p>
         <h2
           id="diff-heading"
-          className="font-display mt-4 max-w-3xl text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl"
+          className="font-display mt-4 max-w-3xl text-3xl font-semibold leading-tight tracking-tight text-[#0f0f0f] sm:text-4xl"
         >
           Why Spindle is not “another CMMS.”
         </h2>
@@ -45,20 +45,20 @@ export function Differentiators() {
           {items.map((item) => (
             <li
               key={item.title}
-              className="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-6 sm:p-7"
+              className="rounded-2xl border border-[#dadada] bg-[#f9fafb] p-6 sm:p-7"
             >
-              <h3 className="font-display text-lg font-semibold text-white">
+              <h3 className="font-display text-lg font-semibold text-[#0f0f0f]">
                 {item.title}
               </h3>
-              <p className="mt-2 text-[14px] leading-relaxed text-zinc-500">
+              <p className="mt-2 text-[14px] leading-relaxed text-[#2f4366]/80">
                 {item.body}
               </p>
             </li>
           ))}
         </ul>
-        <p className="mx-auto mt-12 max-w-3xl text-center text-[15px] leading-relaxed text-zinc-500">
+        <p className="mx-auto mt-12 max-w-3xl text-center text-[15px] leading-relaxed text-[#2f4366]/80">
           Spindle connects{' '}
-          <span className="text-zinc-300">
+          <span className="text-[#1a475c]">
             machine + human signals → agent decisions → human + automated
             execution
           </span>
